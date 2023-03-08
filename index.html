@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://kit.fontawesome.com/37cb327586.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&family=Shrikhand&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --main-font: "Shrikhand", cursive;
+      --secondary-font: "Poppins", sans-serif;
+      --dark-pink: #e1408e;
+      --light-pink: #ecbad7;
+      --dark-blue: #084392;
+      --light-blue: #4dcdd5;
+      --light-yellow: #fede5a;
+      --dark-yellow: #231608;
+    }
+    h1,
+    .navbar-brand {
+      font-family: var(--main-font);
+    }
+    a {
+      font-family: var(--secondary-font);
+      margin: 0 auto;
+    }
+    .btn:hover {
+      opacity: 0.7;
+    }
+    .row {
+      --bs-gutter-x: 0;
+    }
+    .trixie-blue {
+      padding: 0;
+      padding-top: 50px;
+      margin: 0;
+      background-color: var(--dark-blue);
+    }
+    .trixie-blue-text {
+      color: var(--light-blue);
+    }
+    .trixie-blue-button {
+      background-color: var(--light-blue);
+      color: var(--dark-blue);
+    }
+    .trixie-pink {
+      background-color: var(--light-pink);
+      padding: 0;
+      margin: 0;
+    }
+    .trixie-pink-text,
+    .collections-heading,
+    .social-media-links a:hover,
+    .rb-socials a:hover {
+      color: var(--dark-pink);
+    }
+    .trixie-pink-button {
+      background-color: var(--dark-pink);
+      color: var(--light-pink);
+    }
+    .trixie-yellow {
+      padding: 0;
+      margin: 0;
+      background-color: var(--dark-yellow);
+    }
+    .trixie-yellow-heading,
+    footer a {
+      color: var(--light-yellow);
+    }
+    footer {
+      font-family: var(--secondary-font);
+      color: var(--light-yellow);
+      background-color: var(--dark-yellow);
+    }
+    .collections-photo {
+      transition: 0.5s ease;
+      backface-visibility: hidden;
+    }
+    .collections-photo:hover {
+      opacity: 0.25;
+    }
+    .container {
+      position: relative;
+      text-align: center;
+    }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--main-font);
+      color: var(--dark-pink);
+      display: none;
+      font-size: 50px;
+    }
+    .container:hover > .centered {
+      display: block;
+      transition: 0.5s ease;
+    }
+    .all-collections-button {
+      background-color: var(--dark-pink);
+      color: var(--light-pink);
+      display: flex;
+      justify-content: center;
+      max-width: 250px;
+      margin-top: 20px;
+    }
+    .social-media-links a {
+      color: var(--light-yellow);
+      font-size: 30px;
+    }
+    .social-media-links {
+      justify-content: space-evenly;
+    }
+    .shop-collections {
+      padding: 60px;
+      background-color: var(--light-pink);
+    }
+    .bg-blue {
+      background-color: var(--dark-blue);
+    }
+    .nav-link-blue {
+      color: var(--light-blue);
+    }
+    .bg-yellow {
+      background-color: var(--dark-yellow);
+    }
+    .nav-link-yellow {
+      color: var(--light-yellow);
+    }
+    .bg-pink {
+      background-color: var(--light-pink);
+    }
+    .nav-link-pink {
+      color: var(--dark-pink);
+    }
+    .navbar-brand-blue {
+      color: var(--light-blue);
+    }
+    .navbar-brand-pink {
+      color: var(--dark-pink);
+    }
+    .navbar-brand-yellow {
+      color: var(--light-yellow);
+    }
+    .navbar {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    .navbar-expand .navbar-collapse {
+      justify-content: center;
+    }
+    form {
+      font-family: var(--secondary-font);
+      color: var(--light-yellow);
+      margin-left: 60px;
+      margin-right: 60px;
+    }
+    .form-label {
+      font-size: 30px;
+      margin-top: 75px;
+      font-family: var(--main-font);
+    }
+    .yellow-button {
+      background-color: var(--light-yellow);
+      color: var(--dark-yellow);
+      border: none;
+    }
+    .yellow-button:hover {
+      background-color: var(--light-yellow);
+      color: var(--dark-pink);
+    }
+  </style>
+  <title>Trixie Cosmetics</title>
+  <link
+    rel="icon"
+    href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/462/original/logo.png?1675847198"
+    type="image/x-icon"
+  />
+</head>
+<body>
+  <nav id="navbar" class="navbar navbar-expand bg-blue fixed-top">
+    <div class="container-fluid">
+      <a id="navbar-brand" class="navbar-brand nav-link-blue" href="#"
+        >TC <i class="fa-solid fa-heart"></i
+      ></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a
+            id="shop-link"
+            class="nav-link nav-link-blue"
+            href="#latest-collections"
+            >Shop</a
+          >
+          <a id="about-link" class="nav-link nav-link-blue" href="#about-trixie"
+            >About</a
+          >
+          <a
+            id="follow-link"
+            class="nav-link nav-link-blue"
+            href="#follow-trixie"
+            >Follow</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="trixie-blue" id="trixie-blue">
+    <div class="row">
+      <div class="col-6">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/316/original/trixieblue.png?1675243078"
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-6 text-center my-auto">
+        <h1 class="trixie-blue-text">Trixie Cosmetics</h1>
+        <p class="trixie-blue-text">
+          Pro-formulas in toy packaging<br />
+          Tested on drag queens, not animals
+        </p>
+        <a
+          href="#latest-collections"
+          class="btn btn-lg trixie-blue-button mx-1"
+        >
+          Shop
+        </a>
+        <a href="#about-trixie" class="btn btn-lg trixie-blue-button mx-1">
+          About
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="trixie-pink">
+    <div class="shop-collections" id="latest-collections">
+      <h1 class="text-center collections-heading">Latest Collections</h1>
+      <div class="row">
+        <div class="container col-4">
+          <a
+            href="https://trixiecosmetics.com/collections/nighttime-realness"
+            target="_blank"
+            ><img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/446/original/nightrealness.PNG?1675327474"
+              class="img-fluid rounded collections-photo"
+            />
+          </a>
+          <div class="centered">Nighttime Realness</div>
+        </div>
+        <div class="container col-4">
+          <a
+            href="https://trixiecosmetics.com/collections/sweet-treats"
+            target="_blank"
+            ><img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/335/original/sweettreats.PNG?1675255188"
+              class="img-fluid rounded collections-photo"
+          /></a>
+          <div class="centered">Sweet Treats</div>
+        </div>
+        <div class="container col-4">
+          <a
+            href="https://trixiecosmetics.com/collections/girl-talk"
+            target="_blank"
+            ><img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/445/original/girltalk.PNG?1675327463"
+              class="img-fluid rounded collections-photo"
+          /></a>
+          <div class="centered">Girl Talk</div>
+        </div>
+      </div>
+      <a
+        href="https://trixiecosmetics.com/collections/all"
+        target="_blank"
+        class="btn btn-lg all-collections-button"
+        >Shop All Collections</a
+      >
+    </div>
+    <div class="trixie-pink" id="about-trixie">
+      <div class="row">
+        <div class="col-6 text-center my-auto">
+          <h1 class="trixie-pink-text mx-4">About Trixie Cosmetics</h1>
+          <p class="trixie-pink-text mx-4">
+            Founded by drag superstar Trixie Mattel, Trixie Cosmetics is all
+            about providing pro-level cosmetic products in the vibrant, fun
+            packaging of your favorite childhood toys.
+          </p>
+          <p class="trixie-pink-text mx-4">
+            When it comes to cosmetics, Trixie's no dumb blonde. Formulated
+            based on her experience as both a makeup artist and drag queen,
+            these products are the real deal - don't let the adorable packaging
+            and wallet-friendly prices fool you. Why should your holy-grail
+            makeup products have to come in boring black boxes to be taken
+            seriously?
+          </p>
+          <p class="trixie-pink-text mx-4">
+            For drag queens and normals alike, Trixie Cosmetics is committed to
+            providing makeup that will make everyone feel like a legend, icon,
+            and star. We are also cruelty-free and donate a portion of our sales
+            to The Bee Conservancy. Could we bee any more fabulous?
+          </p>
+          <a href="#follow-trixie" class="btn btn-lg trixie-pink-button mb-3">
+            More
+          </a>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/451/original/trixiepink.png?1675332090"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="trixie-yellow" id="follow-trixie">
+    <div class="row">
+      <div class="col-6">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/452/original/trixieyellow.PNG?1675333358"
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-6 text-center my-auto">
+        <h1 class="trixie-yellow-heading mx-3">Follow Trixie Cosmetics</h1>
+        <div class="social-media-links">
+          <a
+            href="https://www.facebook.com/TrixieCosmetics1"
+            target="_blank"
+            class="mx-1"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/trixiecosmetics/"
+            target="_blank"
+            class="mx-1"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://twitter.com/trixiecosmetics"
+            target="_blank"
+            class="mx-1"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UC0biFgrMdkv1hFAFLVePODQ"
+            target="blank"
+            class="mx-1"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Stay updated!</label
+            >
+            <div id="emailHelp" class="mt-2">
+              Subscribe to get the 411 on launches, restocks, and all things
+              Trixie Cosmetics!
+            </div>
+            <input
+              type="email"
+              class="form-control mt-4"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Your email address here"
+            />
+            <button type="submit" class="btn btn-primary yellow-button mt-4">
+              Subscribe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    <div class="pt-3 pb-1">Coded by Rachel Blackie</div>
+    <div class="pb-3 rb-socials">
+      <a href="https://github.com/rachelblackie" target="_blank"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/rachel-blackie-273b18127/"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+    </div>
+  </footer>
+  <script>
+    // add or remove class on scroll to change navbar CSS
+    const nav = document.querySelector("navbar");
+    const navlink = document.querySelector("nav-link");
+
+    function changeNavbarColor() {
+      let trixieBlue = document.getElementById("trixie-blue");
+      let trixiePink = document.getElementById("trixie-pink");
+      let trixieYellow = document.getElementById("follow-trixie");
+
+      var nav = document.getElementById("navbar");
+      var shopLink = document.getElementById("shop-link");
+      var aboutLink = document.getElementById("about-link");
+      var followLink = document.getElementById("follow-link");
+      var navbarBrand = document.getElementById("navbar-brand");
+
+      var scroll = window.scrollY;
+
+      if (trixieBlue.offsetTop - (window.scrollY + nav.offsetHeight) <= 0) {
+        nav.classList.add("bg-blue");
+        nav.classList.remove("bg-pink");
+        nav.classList.remove("bg-yellow");
+        shopLink.classList.add("nav-link-blue");
+        shopLink.classList.remove("nav-link-pink");
+        shopLink.classList.remove("nav-link-yellow");
+        aboutLink.classList.add("nav-link-blue");
+        aboutLink.classList.remove("nav-link-pink");
+        aboutLink.classList.remove("nav-link-yellow");
+        followLink.classList.add("nav-link-blue");
+        followLink.classList.remove("nav-link-pink");
+        followLink.classList.remove("nav-link-yellow");
+        navbarBrand.classList.add("nav-link-blue");
+        navbarBrand.classList.remove("nav-link-pink");
+        navbarBrand.classList.remove("nav-link-yellow");
+      }
+      if (trixiePink.offsetTop - (window.scrollY + nav.offsetHeight) <= 0) {
+        nav.classList.add("bg-pink");
+        nav.classList.remove("bg-blue");
+        nav.classList.remove("bg-yellow");
+        shopLink.classList.add("nav-link-pink");
+        shopLink.classList.remove("nav-link-blue");
+        shopLink.classList.remove("nav-link-yellow");
+        aboutLink.classList.add("nav-link-pink");
+        aboutLink.classList.remove("nav-link-blue");
+        aboutLink.classList.remove("nav-link-yellow");
+        followLink.classList.add("nav-link-pink");
+        followLink.classList.remove("nav-link-blue");
+        followLink.classList.remove("nav-link-yellow");
+        navbarBrand.classList.add("nav-link-pink");
+        navbarBrand.classList.remove("nav-link-blue");
+        navbarBrand.classList.remove("nav-link-yellow");
+      }
+      if (trixieYellow.offsetTop - (window.scrollY + nav.offsetHeight) <= 0) {
+        nav.classList.add("bg-yellow");
+        nav.classList.remove("bg-blue");
+        nav.classList.remove("bg-pink");
+        shopLink.classList.add("nav-link-yellow");
+        shopLink.classList.remove("nav-link-pink");
+        shopLink.classList.remove("nav-link-blue");
+        aboutLink.classList.add("nav-link-yellow");
+        aboutLink.classList.remove("nav-link-pink");
+        aboutLink.classList.remove("nav-link-blue");
+        followLink.classList.add("nav-link-yellow");
+        followLink.classList.remove("nav-link-pink");
+        followLink.classList.remove("nav-link-blue");
+        navbarBrand.classList.add("nav-link-yellow");
+        navbarBrand.classList.remove("nav-link-pink");
+        navbarBrand.classList.remove("nav-link-blue");
+      }
+    }
+
+    window.addEventListener("scroll", changeNavbarColor);
+
+    // pop-up after form submit
+    function formReply() {
+      alert("Thanks! You'll receive updates from Trixie Cosmetics soon!");
+    }
+    let clickSubmit = document.querySelector(".yellow-button");
+    clickSubmit.addEventListener("click", formReply);
+    let typeSubmit = document.querySelector(".form-control");
+    typeSubmit.addEventListerner("submit", formReply);
+  </script>
+</body>
